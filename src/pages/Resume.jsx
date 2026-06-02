@@ -29,7 +29,7 @@ function Resume() {
         <div className="heroPhotoWrap">
             <img src={profilePhoto} alt="Yu-Jui Wang" className="heroPhoto" />
         </div>
-        </section>
+      </section>
 
       <section className="section">
         <h2>About Me</h2>
