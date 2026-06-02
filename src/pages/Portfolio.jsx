@@ -1,4 +1,5 @@
 import { projects } from '../data/projects';
+import ContactFooter from '../components/ContactFooter';
 
 function Portfolio() {
   return (
@@ -43,6 +44,7 @@ function Portfolio() {
           </article>
         ))}
       </section>
+      <ContactFooter />
     </>
   );
 }

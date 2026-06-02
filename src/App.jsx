@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header';
-import ContactFooter from './components/ContactFooter';
 import Resume from './pages/Resume';
 import Portfolio from './pages/Portfolio';
 
@@ -20,7 +19,6 @@ function App() {
           </Routes>
         </main>
 
-        <ContactFooter />
       </div>
     </BrowserRouter>
   );

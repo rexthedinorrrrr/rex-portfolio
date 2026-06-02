@@ -1,26 +1,35 @@
+import profilePhoto from '../assets/my_photo.jpg';
+import ContactFooter from '../components/ContactFooter';
+
 function Resume() {
   return (
     <>
       <section className="hero">
-        <p className="eyebrow">Portfolio</p>
+        <div className="heroContent">
+            <p className="eyebrow">Portfolio</p>
 
-        <h1>Yu-Jui Wang</h1>
+            <h1>Yu-Jui Wang</h1>
 
-        <h2>Software Engineering · Bioinformatics · Research</h2>
+            <h2>Software Engineering · Bioinformatics · Research</h2>
 
-        <p className="heroText">
-          I am an undergraduate student in Biomechatronics Engineering at
-          National Taiwan University, interested in software engineering,
-          data analysis, and computational biology.
-        </p>
+            <p className="heroText">
+            I am an undergraduate student in Biomechatronics Engineering at
+            National Taiwan University, interested in software engineering,
+            data analysis, and computational biology.
+            </p>
 
-        <div className="heroButtons">
-          <a href="/portfolio">View Portfolio</a>
-          <a href="/resume.pdf" className="secondary" target="_blank" rel="noreferrer">
-            Download Resume
-          </a>
+            {/* <div className="heroButtons">
+            <a href="/portfolio">View Portfolio</a>
+            <a href="/resume.pdf" className="secondary" target="_blank" rel="noreferrer">
+                Download Resume
+            </a>
+            </div> */}
         </div>
-      </section>
+
+        <div className="heroPhotoWrap">
+            <img src={profilePhoto} alt="Yu-Jui Wang" className="heroPhoto" />
+        </div>
+        </section>
 
       <section className="section">
         <h2>About Me</h2>
@@ -84,6 +93,7 @@ function Resume() {
           </div>
         </div>
       </section>
+      <ContactFooter />
     </>
   );
 }
