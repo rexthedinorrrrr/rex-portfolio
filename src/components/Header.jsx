@@ -4,7 +4,8 @@ function Header() {
   return (
     <header className="header">
       <NavLink to="/resume" className="brand">
-        Yu-Jui Wang
+        <span className="brandIcon">🦖</span>
+        <span> Yu-Jui Wang</span>
       </NavLink>
 
       <nav className="nav">
