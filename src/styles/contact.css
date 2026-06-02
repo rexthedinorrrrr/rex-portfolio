@@ -1,0 +1,125 @@
+.contactFooter {
+  width: 100%;
+  margin-top: 80px;
+  padding: 34px 0;
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid var(--border);
+}
+
+.contactInner {
+  width: min(1080px, 92%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.contactText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 7px;
+}
+
+.contactLabel {
+  margin: 0 0 4px;
+  color: var(--primary-dark);
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.contactSubtext {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.emailLine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.emailLine span {
+  line-height: 1.2;
+}
+
+.emailLine button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: var(--card);
+  color: var(--primary-dark);
+  font-size: 0.78rem;
+  line-height: 1.2;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.emailLine button:hover {
+  background: var(--soft);
+}
+
+.contactGrid {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contactItem {
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--primary-dark);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 18px rgba(31, 41, 51, 0.04);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+
+  font-family: inherit;
+  font-size: 0.84rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contactItem:hover {
+  transform: translateY(-2px);
+  background: var(--soft);
+  box-shadow: 0 12px 24px rgba(31, 41, 51, 0.07);
+}
+
+@media (max-width: 800px) {
+  .contactInner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contactGrid {
+    justify-content: flex-start;
+  }
+
+  .emailLine {
+    flex-wrap: wrap;
+  }
+}

@@ -23,27 +23,24 @@ function ContactFooter() {
       <div className="contactInner">
         <div className="contactText">
           <p className="contactLabel">Contact</p>
-          <p className="contactSubtext">Taipei, Taiwan</p>
+          <p className="contactSubtext">Taipei / Kaohsiung, Taiwan</p>
+
+          <div className="emailLine">
+            <span>{email}</span>
+            <button type="button" onClick={handleCopyEmail}>
+              {copied ? 'Copied!' : 'Copy'}
+            </button>
+          </div>
         </div>
 
         <div className="contactGrid">
-          <button
-            type="button"
-            className={`contactItem contactEmail ${copied ? 'copied' : ''}`}
-            onClick={handleCopyEmail}
-            title="Click to copy email"
-          >
-            <span>Email</span>
-            <strong>{copied ? 'Copied!' : email}</strong>
-          </button>
-
           <a
             className="contactItem"
             href="https://github.com/rexthedinorrrrr"
             target="_blank"
             rel="noreferrer"
           >
-            <span>GitHub</span>
+            GitHub
           </a>
 
           <a
@@ -52,7 +49,7 @@ function ContactFooter() {
             target="_blank"
             rel="noreferrer"
           >
-            <span>LinkedIn</span>
+            LinkedIn
           </a>
 
           <a
@@ -61,16 +58,16 @@ function ContactFooter() {
             target="_blank"
             rel="noreferrer"
           >
-            <span>Resume</span>
+            Resume
           </a>
 
           <a
             className="contactItem"
-            href="https://drive.google.com/file/d/1cxNXuGARZvfBLIyp-mJAVJxBWcEj7fsT/view?usp=sharing"
+            href="https://drive.google.com/file/d/1cxNXuGARZvfBLIyp-mJAVJxBWcEj7fsT/view?usp=drive_link"
             target="_blank"
             rel="noreferrer"
           >
-            <span>Transcript</span>
+            Transcript
           </a>
         </div>
       </div>
