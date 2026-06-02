@@ -4,18 +4,12 @@ function ResumeHero() {
   return (
     <section className="hero heroWithPhoto">
       <div className="heroContent">
-        {/* <p className="eyebrow">Hello, I&apos;m</p> */}
 
         <h1>Yu-Jui Wang</h1>
-        <p className="heroAlias">Rex Wang</p>
 
-        <h2>Software Engineering · Bioinformatics · Research</h2>
+        <p className="heroDegree">B.S. in Biomechatronics Engineering</p>
+        <p className="heroFocus">Software Engineering · AI Engineering · Bioinformatics</p>
 
-        <p className="heroText">
-          I am an undergraduate student in Biomechatronics Engineering at
-          National Taiwan University, interested in software engineering,
-          data analysis, and computational biology.
-        </p>
       </div>
 
       <div className="heroPhotoWrap">

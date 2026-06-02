@@ -20,20 +20,22 @@
   font-weight: 650;
 }
 
-.heroText {
-  max-width: 740px;
-  font-size: 1.1rem;
-  line-height: 1.8;
+.heroDegree {
+  margin: 24px 0 0;
   color: var(--muted);
-  margin-top: 24px;
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  line-height: 1.35;
+  font-weight: 650;
+  letter-spacing: -0.03em;
 }
 
-.heroAlias {
-  margin: 12px 0 0;
+.heroFocus {
+  margin: 18px 0 0;
   color: var(--primary-dark);
-  font-size: clamp(1.3rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.4;
+  font-weight: 750;
+  letter-spacing: 0.02em;
 }
 
 .heroButtons {
