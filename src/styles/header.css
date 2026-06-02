@@ -33,6 +33,12 @@
   box-shadow: 0 8px 24px rgba(31, 41, 51, 0.08);
 }
 
+.brandIconImage {
+  width: 32px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
 @media (max-width: 800px) {
   .header {
     align-items: flex-start;

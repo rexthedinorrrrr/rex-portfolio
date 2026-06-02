@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
+import dinoIcon from '../assets/Dino.svg';
 
 function Header() {
   return (
     <header className="header">
       <NavLink to="/resume" className="brand">
-        <span className="brandIcon">🦖</span>
-        <span> Yu-Jui Wang</span>
+        <img src={dinoIcon} alt="Dino Icon" className="brandIconImage" />
+        <span>  Yu-Jui Wang</span>
       </NavLink>
 
       <nav className="nav">

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 72" width="96" height="72" shape-rendering="crispEdges">
+  <title>Pixel Dino</title>
+
+  <!--
+    Editing guide:
+    x = left/right position
+    y = up/down position
+    width = block width
+    height = block height
+  -->
+
+  <g fill="#585858">
+    <!-- tail -->
+    <rect x="24" y="40" width="4" height="8"/>
+    <rect x="24" y="44" width="8" height="8"/>
+    <rect x="24" y="48" width="8" height="8"/>
+    <rect x="28" y="52" width="12" height="8"/>
+
+    <!-- back / body slope -->
+    <rect x="32" y="48" width="8" height="16"/>
+    <rect x="36" y="44" width="12" height="20"/>
+    <rect x="40" y="40" width="12" height="24"/>
+    <rect x="44" y="36" width="12" height="28"/>
+
+    <!-- main body -->
+    <rect x="48" y="32" width="12" height="32"/>
+    <rect x="52" y="28" width="12" height="32"/>
+    <rect x="56" y="24" width="12" height="32"/>
+
+    <!-- neck -->
+    <rect x="56" y="16" width="12" height="16"/>
+    <rect x="60" y="12" width="12" height="16"/>
+
+    <!-- head -->
+    <!-- <rect x="64" y="8" width="24" height="8"/> -->
+    <rect x="60" y="12" width="28" height="12"/>
+    <rect x="60" y="16" width="32" height="12"/>
+    <rect x="60" y="24" width="32" height="4"/>
+
+    <!-- mouth / lower jaw -->
+    <rect x="64" y="28" width="12" height="4"/>
+    <rect x="64" y="32" width="24" height="4"/>
+    <!-- <rect x="60" y="40" width="16" height="4"/> -->
+
+    <!-- arm -->
+    <rect x="60" y="40" width="16" height="4"/>
+    <rect x="72" y="44" width="4" height="4"/>
+
+    <!-- left leg -->
+    <rect x="40" y="60" width="4" height="8"/>
+    <rect x="40" y="68" width="8" height="4"/>
+
+    <!-- right leg -->
+    <rect x="52" y="60" width="4" height="8"/>
+    <rect x="52" y="68" width="8" height="4"/>
+  </g>
+
+  <!-- eye -->
+  <rect x="68" y="16" width="4" height="4" fill="#ffffff"/>
+</svg>
