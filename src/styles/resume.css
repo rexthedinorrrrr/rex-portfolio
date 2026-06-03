@@ -134,12 +134,11 @@
   }
 
   .heroPhotoWrap {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .heroPhoto {
-    width: min(260px, 80%);
-    border-radius: 28px;
+    width: min(280px, 90%);
   }
 
   .skillGroups {
