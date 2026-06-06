@@ -1,8 +1,8 @@
-import ResumeHero from '../components/ResumeHero';
-import AboutSection from '../components/AboutSection';
-import EducationSection from '../components/EducationSection';
-import ExperienceSection from '../components/ExperienceSection';
-import SkillsSection from '../components/SkillsSection';
+import ResumeHero from '../components/Resume/ResumeHero';
+import AboutSection from '../components/Resume/AboutSection';
+import EducationSection from '../components/Resume/EducationSection';
+import ExperienceSection from '../components/Resume/ExperienceSection';
+import SkillsSection from '../components/Resume/SkillsSection';
 
 function Resume() {
   return (

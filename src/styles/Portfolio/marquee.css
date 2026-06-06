@@ -1,0 +1,141 @@
+/* Portfolio tag marquee */
+
+.portfolioMarquee {
+  width: 100%;
+  margin: 8px 0 36px;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolioMarquee::before,
+.portfolioMarquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.portfolioMarquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+
+.portfolioMarquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg), transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marqueeMove 28s linear infinite;
+}
+
+.marqueeGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.marqueeTag {
+  padding: 9px 14px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  color: var(--primary-dark);
+
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  box-shadow: 0 10px 24px rgba(31, 41, 51, 0.045);
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition:
+    transform 0.16s ease,
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+}
+
+.marqueeTag:hover {
+  transform: translateY(-2px);
+  background: var(--soft);
+}
+
+.marqueeTag.active {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+}
+
+/* When filters are selected, marquee becomes a scrollable tag list */
+.portfolioMarquee.isStatic {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+}
+
+.portfolioMarquee.isStatic .marqueeTrack {
+  animation: none;
+}
+
+.portfolioMarquee.isStatic::before,
+.portfolioMarquee.isStatic::after {
+  display: none;
+}
+
+.portfolioMarquee.isStatic::-webkit-scrollbar {
+  height: 6px;
+}
+
+.portfolioMarquee.isStatic::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.portfolioMarquee.isStatic::-webkit-scrollbar-thumb {
+  background: rgba(108, 142, 173, 0.35);
+  border-radius: 999px;
+}
+
+.portfolioMarquee:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 800px) {
+  .portfolioMarquee {
+    margin: 0 0 28px;
+  }
+
+  .marqueeTrack {
+    animation-duration: 22s;
+  }
+
+  .marqueeGroup {
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .marqueeTag {
+    padding: 8px 12px;
+    font-size: 0.76rem;
+  }
+}

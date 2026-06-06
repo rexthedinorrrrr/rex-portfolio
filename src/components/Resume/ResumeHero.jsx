@@ -1,4 +1,4 @@
-import profilePhoto from '../assets/my_photo.jpg';
+import profilePhoto from './my_photo.jpg';
 
 function ResumeHero() {
   return (
