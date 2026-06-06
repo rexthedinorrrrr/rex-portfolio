@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import projects from '../data/projects.json';
 
 const marqueeTags = [
@@ -5,31 +6,109 @@ const marqueeTags = [
 ].sort((a, b) => a.localeCompare(b));
 
 function Portfolio() {
+  const [selectedTags, setSelectedTags] = useState([]);
+  const marqueeRef = useRef(null);
+  const trackRef = useRef(null);
+
+  const hasSelectedTags = selectedTags.length > 0;
+
+  const filteredProjects = hasSelectedTags
+    ? projects.filter((project) =>
+      selectedTags.every((tag) => project.tags.includes(tag))
+    )
+    : projects;
+
+  const getCurrentMarqueeOffset = () => {
+    if (!marqueeRef.current || !trackRef.current) return 0;
+
+    const marqueeLeft = marqueeRef.current.getBoundingClientRect().left;
+    const trackLeft = trackRef.current.getBoundingClientRect().left;
+
+    return marqueeLeft - trackLeft;
+  };
+
+  const toggleTag = (tag) => {
+    const isSelectingFirstTag =
+      selectedTags.length === 0 && !selectedTags.includes(tag);
+
+    const currentOffset = getCurrentMarqueeOffset();
+
+    setSelectedTags((currentTags) =>
+      currentTags.includes(tag)
+        ? currentTags.filter((currentTag) => currentTag !== tag)
+        : [...currentTags, tag]
+    );
+
+    if (isSelectingFirstTag) {
+      requestAnimationFrame(() => {
+        if (marqueeRef.current) {
+          marqueeRef.current.scrollLeft = currentOffset;
+        }
+      });
+    }
+  };
+
+  const clearFilters = () => {
+    setSelectedTags([]);
+
+    requestAnimationFrame(() => {
+      if (marqueeRef.current) {
+        marqueeRef.current.scrollLeft = 0;
+      }
+    });
+  };
+
   return (
     <>
       <section className="pageHeader">
         <p className="eyebrow">Selected Work</p>
         <h1>Portfolio</h1>
-        {/* <p>
+        <p>
           A collection of projects across software engineering, artificial
           intelligence, data analysis, and bioinformatics.
-        </p> */}
+        </p>
       </section>
 
-      <section className="portfolioMarquee" aria-label="Project keywords">
-        <div className="marqueeTrack">
+      <section
+        ref={marqueeRef}
+        className={`portfolioMarquee ${hasSelectedTags ? 'isPaused' : ''}`}
+        aria-label="Project keywords"
+      >
+        <div className="marqueeTrack" ref={trackRef}>
           {[...Array(2)].map((_, groupIndex) => (
             <div className="marqueeGroup" key={groupIndex}>
               {marqueeTags.map((tag) => (
-                <span key={`${groupIndex}-${tag}`}>#{tag}</span>
+                <button
+                  type="button"
+                  key={`${groupIndex}-${tag}`}
+                  className={`marqueeTag ${
+                    selectedTags.includes(tag) ? 'active' : ''
+                  }`}
+                  onClick={() => toggleTag(tag)}
+                >
+                  #{tag}
+                </button>
               ))}
             </div>
           ))}
         </div>
       </section>
 
+      {hasSelectedTags && (
+        <div className="filterStatus">
+          <p>
+            Showing projects tagged with{' '}
+            {selectedTags.map((tag) => `#${tag}`).join(', ')}
+          </p>
+
+          <button type="button" onClick={clearFilters}>
+            Clear filters
+          </button>
+        </div>
+      )}
+
       <section className="projectList">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <article className="projectCard" key={project.id}>
             <div className="projectTop">
               <span className="projectType">{project.type}</span>
@@ -45,7 +124,15 @@ function Portfolio() {
 
             <div className="techList">
               {project.tags.map((tag) => (
-                <span key={tag}>#{tag}</span>
+                <button
+                  type="button"
+                  key={tag}
+                  className={`projectTag ${selectedTags.includes(tag) ? 'active' : ''
+                    }`}
+                  onClick={() => toggleTag(tag)}
+                >
+                  #{tag}
+                </button>
               ))}
             </div>
 

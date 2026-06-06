@@ -1,3 +1,5 @@
+/* --- Header --- */
+
 .pageHeader {
   padding: 80px 0 48px;
   text-align: center;
@@ -19,9 +21,11 @@
   line-height: 1.8;
 }
 
+/* --- Portfolio Marquee --- */
+
 .portfolioMarquee {
   width: 100%;
-  margin: 8px 0 48px;
+  margin: 8px 0 36px;
   overflow: hidden;
   position: relative;
 }
@@ -53,6 +57,21 @@
   animation: marqueeMove 28s linear infinite;
 }
 
+.portfolioMarquee.isPaused {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+}
+
+.portfolioMarquee.isPaused .marqueeTrack {
+  animation: none;
+}
+
+.portfolioMarquee.isPaused::before,
+.portfolioMarquee.isPaused::after {
+  display: none;
+}
+
 .marqueeGroup {
   display: flex;
   align-items: center;
@@ -60,13 +79,15 @@
   padding-right: 12px;
 }
 
-.marqueeGroup span {
+.marqueeTag,
+.projectTag {
   padding: 9px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border);
   color: var(--primary-dark);
 
+  font-family: inherit;
   font-size: 0.82rem;
   font-weight: 850;
   letter-spacing: 0.08em;
@@ -74,6 +95,25 @@
 
   box-shadow: 0 10px 24px rgba(31, 41, 51, 0.045);
   white-space: nowrap;
+  cursor: pointer;
+
+  transition:
+    transform 0.16s ease,
+    background 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.marqueeTag:hover,
+.projectTag:hover {
+  transform: translateY(-2px);
+  background: var(--soft);
+}
+
+.marqueeTag.active,
+.projectTag.active {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
 }
 
 @keyframes marqueeMove {
@@ -89,6 +129,51 @@
 .portfolioMarquee:hover .marqueeTrack {
   animation-play-state: paused;
 }
+
+/* --- Filter Status --- */
+
+.filterStatus {
+  margin: 0 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filterStatus p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.filterStatus button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--card);
+  color: var(--primary-dark);
+
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition:
+    transform 0.16s ease,
+    background 0.16s ease;
+}
+
+.filterStatus button:hover {
+  transform: translateY(-2px);
+  background: var(--soft);
+}
+
+/* --- Project Cards --- */
 
 .projectList {
   display: grid;
@@ -180,13 +265,11 @@
   margin: 24px 0 0;
 }
 
-.techList span {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(216, 230, 231, 0.8);
-  color: var(--primary-dark);
-  font-size: 0.86rem;
-  font-weight: 800;
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
 }
 
 .highlights {
@@ -254,16 +337,22 @@
   }
 
   .portfolioMarquee {
-    margin: 0 0 34px;
+    margin: 0 0 28px;
   }
 
   .marqueeTrack {
-    animation-duration: 22s;
+    animation-duration: 26s;
   }
 
-  .marqueeGroup span {
+  .marqueeTag,
+  .projectTag {
     padding: 8px 12px;
     font-size: 0.76rem;
+  }
+
+  .filterStatus {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .projectCard {
