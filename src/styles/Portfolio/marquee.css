@@ -9,10 +9,16 @@
 
 .portfolioMarquee::before,
 .portfolioMarquee::after {
+  display: none;
+}
+
+/* 
+.portfolioMarquee::before,
+.portfolioMarquee::after {
   content: '';
   position: absolute;
   top: 0;
-  width: 90px;
+  width: 56px;
   height: 100%;
   z-index: 2;
   pointer-events: none;
@@ -20,13 +26,18 @@
 
 .portfolioMarquee::before {
   left: 0;
-  background: linear-gradient(90deg, var(--bg), transparent);
+  background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
 }
 
 .portfolioMarquee::after {
   right: 0;
-  background: linear-gradient(270deg, var(--bg), transparent);
+  background: linear-gradient(270deg, var(--bg) 0%, transparent 100%);
 }
+
+.portfolioMarquee.isStatic::before,
+.portfolioMarquee.isStatic::after {
+  content: none;
+} */
 
 .marqueeTrack {
   display: flex;
