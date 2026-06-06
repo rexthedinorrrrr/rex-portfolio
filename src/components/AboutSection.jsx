@@ -1,14 +1,24 @@
 function AboutSection() {
   return (
-    <section className="section">
+    <section className="section aboutSection">
       <h2>About Me</h2>
-      <p>
-        I enjoy building practical tools that connect programming, research,
-        and problem solving. My recent work focuses on evaluating HLA typing
-        tools using single-cell RNA sequencing data. I am also developing my
-        software engineering skills through web development, Linux workflows,
-        and side projects.
-      </p>
+
+      <div className="aboutText">
+        <p>
+          I am an easygoing and cooperative software engineering student with a
+          background in biomechatronics engineering. I enjoy building practical
+          tools, learning new technologies, and connecting software development
+          with data-driven problem solving.
+        </p>
+
+        <p>
+          My current interests include software engineering, artificial
+          intelligence, bioinformatics, and reliable research workflows.
+          Recently, I have been working on HLA genotyping from single-cell RNA
+          sequencing data, where I build reproducible pipelines for tool
+          execution, benchmarking, and coverage analysis.
+        </p>
+      </div>
     </section>
   );
 }
