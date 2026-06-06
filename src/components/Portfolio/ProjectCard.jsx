@@ -1,6 +1,12 @@
 function ProjectCard({ project, selectedTags, onToggleTag }) {
   return (
     <article className="projectCard">
+      {project.image && (
+        <figure className="projectPreview">
+          <img src={project.image} alt={`${project.title} preview`} />
+        </figure>
+      )}
+
       <div className="projectTop">
         <span className="projectType">{project.type}</span>
         <span className="projectPeriod">{project.period}</span>
