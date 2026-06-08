@@ -8,7 +8,7 @@ import Portfolio from './pages/Portfolio';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rex-portfolio">
       <div className="app">
         <Header />
 
@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<Navigate to="/resume" replace />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="*" element={<Navigate to="/resume" replace />} />
           </Routes>
         </main>
 
