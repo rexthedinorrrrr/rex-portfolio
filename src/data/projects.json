@@ -6,7 +6,7 @@
         "title": "HLA Typing from scRNA-seq Data",
         "subtitle": "Comparison and Optimization of HLA Genotyping Algorithms",
         "description": "Built a reproducible pipeline for evaluating HLA genotyping tools on single-cell RNA-seq data, focusing on tool execution, benchmarking, coverage analysis, and failure case interpretation.",
-        "image": "/projects/HLA.png",
+        "image": "projects/HLA.png",
         "tags": [
             "Python",
             "Linux",
